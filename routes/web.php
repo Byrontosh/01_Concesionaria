@@ -3,6 +3,7 @@
 use App\Http\Controllers\AutoController;
 use App\Http\Controllers\ContactoController;
 use App\Http\Controllers\ModeloController;
+use App\Http\Controllers\PersonalController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/',function()
@@ -12,7 +13,7 @@ Route::get('/',function()
 
 Route::view('nosotros','nosotros')->name('about');
 
-Route::view('personal','personal')->name('personal');
+Route::get('personal',[PersonalController::class,'personal'])->name('personal');
 
 // Route::get('contactos/{name?}',function($name='Invitado')
 // {
@@ -21,7 +22,7 @@ Route::view('personal','personal')->name('personal');
 
 // Route::get('modelos',function()
 // {
-//     $autos = 
+//     $autos =
 //     [
 //         "CHEVROLET"=>'TRACKER',
 //         "MAZDA"=>'323',
@@ -59,7 +60,7 @@ Route::get('demo1', function () {
     return 'Hola Laravel';
 });
 
-// ROUTE PARA PRESENTAR UN JSON UTILIZANDO EL MÉTODO GET 
+// ROUTE PARA PRESENTAR UN JSON UTILIZANDO EL MÉTODO GET
 Route::get('demo2', function () {
     return '{
         "Nombre":"Byron",
@@ -97,9 +98,9 @@ Route::get('contact',function(){
 // ROUTE PARA MANDAR DATOS A LA VISTA
 Route::get('modelos',function()
 {
-    // ES VÁLIDO PERO SE DEBE RECORDAR QUE PARA TRAER DATOS O PROCESAR 
-    // PETICIONES DE LA BDD SE UTILIZA UN CONTROLADOR 
-    $autos = 
+    // ES VÁLIDO PERO SE DEBE RECORDAR QUE PARA TRAER DATOS O PROCESAR
+    // PETICIONES DE LA BDD SE UTILIZA UN CONTROLADOR
+    $autos =
     [
         "CHEVROLET"=>'TRACKER',
         "MAZDA"=>'323',
@@ -123,11 +124,11 @@ Route::get('productos/',function(){
     return redirect()->route('novedades');
 })->name('productos');
 
-// ROUTE DE TIPO 
+// ROUTE DE TIPO
 // GET
-// POST 
-// PUT 
-// PATCH 
-// DELETE 
+// POST
+// PUT
+// PATCH
+// DELETE
 
 */
